@@ -1,4 +1,4 @@
-module github.com/OverlayNetwork/onet-transport-kcp-go
+module github.com/overlaynetwork/onet-transport-kcp-go
 
 go 1.14
 
