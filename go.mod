@@ -15,4 +15,4 @@ require (
 	golang.org/x/net v0.0.0-20200904194848-62affa334b73 // indirect
 )
 
-// replace github.com/overlaynetwork/onet-go v0.0.3 => ../onet-go
+replace github.com/overlaynetwork/onet-go => ../onet-go

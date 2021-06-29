@@ -28,7 +28,19 @@ func TestConn(t *testing.T) {
 		require.NoError(t, err)
 	}()
 
-	_, err = listener.Accept()
+	conn, err := listener.Accept()
 
 	require.NoError(t, err)
+
+	println(conn.RemoteAddr().String(), conn.LocalAddr().String())
+
+	require.NoError(t, listener.Close())
+
+	transport, ok := onet.LookupTransport("kcp")
+
+	require.True(t, ok)
+	require.NotNil(t, transport)
+
+	require.Equal(t, len(transport.(*kcpTransport).listeners), 0)
+
 }
